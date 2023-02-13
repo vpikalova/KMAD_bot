@@ -309,10 +309,9 @@ def pratsevlashuv(update: Update, context: CallbackContext):
                            contents['start']['next_menu']['mozhlyvosti']['next_menu']['pratsevlashuv']['text'][0])
     query = update.callback_query
     query.answer()
-
     reply = InlineKeyboardMarkup(keyboard_backto_mozhlyvosti)
-    query.message.reply_text(
-        text=content, reply_markup=reply, parse_mode="Markdown")
+    query.message.reply_text(text=content, parse_mode="Markdown")
+    query.message.reply_photo(link + photos[0],reply_markup=reply)
 
 
 def praktika(update: Update, context: CallbackContext):
