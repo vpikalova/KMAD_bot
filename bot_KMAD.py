@@ -218,31 +218,19 @@ def istoria(update: Update, context: CallbackContext):
     content_lines = content.split('\n')
     photos = read_content(link +
                           contents['start']['next_menu']['kafedra']['next_menu']['istoria']['photo'][0])
-    print(photos)
     photos = photos.split()
-    print(photos)
     query = update.callback_query
-    query.answer()
-
+    #query.answer()
+    content_list = content.split('||')
     reply = InlineKeyboardMarkup(keyboard_backto_kafedra)
-    step = (len(content_lines)-1) // len(photos)
-    print(len(content_lines), len(photos), step)
-
+    #step = (len(content_lines)-1) // len(photos)
+    
     for i in range(len(photos)):
-        print('b', i)
-        text_message = '\n'.join(
-            content_lines[i*step:(i+1)*step])
-        print("text_message "+text_message)
+        text_message = content_list[i]
         query.message.reply_text(text= text_message, parse_mode="Markdown")
-        #print('m', i//step)
         link_photo = link + photos[i]
-        print("link_photo"+link_photo+'--')
         query.message.reply_photo(link_photo)
-        print('e', i)
-        #print('\n'.join(content_lines[i*step:]))
-    query.message.reply_text(
-        text='\n'.join(content_lines[(i+1)*step:]), reply_markup=reply, parse_mode="Markdown")
-
+    query.message.reply_text(text=content_list[-1]), reply_markup=reply, parse_mode="Markdown")
 
 def auditorii(update: Update, context: CallbackContext):
 
