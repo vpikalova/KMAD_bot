@@ -25,7 +25,7 @@ contents = {'start': {'text': ['start1.txt', 'start2.txt'],
                                    'photo': [],
                                    'next_menu': {'vykladachi': {'text': ['start_kafedra_vykladachi_with_url.txt'],
                                                                 'photo': []},
-                                                 'vidminnosti': {'text': ['start_kafedra_vidminnosti.txt'],
+                                                 'perevagu': {'text': ['start_kafedra_perevagu.txt'],
                                                                  'photo': []},
                                                  'istoria': {'text': ['start_kafedra_istoria.txt'],
                                                              'photo': ['start_kafedra_istoria_urls_photo.txt']},
@@ -67,8 +67,8 @@ reply_question_markup = ReplyKeyboardMarkup(keyboard_question, resize_keyboard=T
 
 keyboard_kafedra = [
     [InlineKeyboardButton("Викладачі", callback_data="vykladachi")],
-    [InlineKeyboardButton("Відмінності кафедри",
-                          callback_data="vidminnosti")],
+    [InlineKeyboardButton("Конкурентні переваги кафедри",
+                          callback_data="perevagu")],
     [InlineKeyboardButton("Історія кафедри", callback_data="istoria")],
     [InlineKeyboardButton("Аудиторії кафедри", callback_data="auditorii")],
     [InlineKeyboardButton("Наші випускники", callback_data="vypusnyki")]
@@ -199,17 +199,17 @@ def vykladachi(update: Update, context: CallbackContext):
         text=content, reply_markup=reply, parse_mode="Markdown")
 
 
-def vidminnosti(update: Update, context: CallbackContext):
+def perevagu(update: Update, context: CallbackContext):
 
     content = read_content(link +
-                           contents['start']['next_menu']['kafedra']['next_menu']['vidminnosti']['text'][0])
+                           contents['start']['next_menu']['kafedra']['next_menu']['perevagu']['text'][0])
     query = update.callback_query
     query.answer()
 
     reply = InlineKeyboardMarkup(keyboard_backto_kafedra)
-    query.message.reply_text(
-        text=content, reply_markup=reply, parse_mode="Markdown")
-
+    for el in content.split('||')[:-1]:
+        query.message.reply_text(text=el, parse_mode="Markdown")
+    query.message.reply_text(text=content.split('||')[-1], reply_markup=reply, parse_mode="Markdown")
 
 def istoria(update: Update, context: CallbackContext):
 
