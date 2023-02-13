@@ -307,6 +307,9 @@ def pratsevlashuv(update: Update, context: CallbackContext):
 
     content = read_content(link +
                            contents['start']['next_menu']['mozhlyvosti']['next_menu']['pratsevlashuv']['text'][0])
+    photos = read_content(link +
+                          contents['start']['next_menu']['mozhlyvosti']['next_menu']['pratsevlashuv']['photo'][0])
+    photos = photos.split('\n')
     query = update.callback_query
     query.answer()
     reply = InlineKeyboardMarkup(keyboard_backto_mozhlyvosti)
