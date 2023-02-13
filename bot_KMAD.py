@@ -435,7 +435,7 @@ def main():
     dp.add_handler(CallbackQueryHandler(umovy, pattern="umovy"))
 
     dp.add_handler(CallbackQueryHandler(vykladachi, pattern="vykladachi"))
-    dp.add_handler(CallbackQueryHandler(vidminnosti, pattern="vidminnosti"))
+    dp.add_handler(CallbackQueryHandler(perevagu, pattern="perevagu"))
     dp.add_handler(CallbackQueryHandler(istoria, pattern="istoria"))
     dp.add_handler(CallbackQueryHandler(auditorii, pattern="auditorii"))
     dp.add_handler(CallbackQueryHandler(vypusnyki, pattern="vypusnyki"))
