@@ -390,7 +390,7 @@ def kilkistMists(update: Update, context: CallbackContext):
 
     reply = InlineKeyboardMarkup(keyboard_backto_umovy)
     query.message.reply_text(
-        text=content, reply_markup=reply, parse_mode="Markdown")
+        text=content, reply_markup=reply, parse_mode="HTML")
 
 # -------------------------------**   end block umovy  **----------------------------
 
