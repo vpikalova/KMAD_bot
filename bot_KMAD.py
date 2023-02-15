@@ -208,7 +208,7 @@ def perevagu(update: Update, context: CallbackContext):
 
     reply = InlineKeyboardMarkup(keyboard_backto_kafedra)
     for el in content.split('||')[:-1]:
-        query.message.reply_text(text=el, parse_mode="Markdown")
+        query.message.reply_text(text=el, parse_mode="HTML")
     query.message.reply_text(text=content.split('||')[-1], reply_markup=reply, parse_mode="Markdown")
 
 def istoria(update: Update, context: CallbackContext):
