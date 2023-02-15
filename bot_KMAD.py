@@ -273,7 +273,7 @@ def vypusnyki(update: Update, context: CallbackContext):
         content_lines[:13]), parse_mode="Markdown")
     query.message.reply_photo(link + photos[0])
     query.message.reply_text(
-        text='\n'.join(content_lines[13:]), reply_markup=reply, parse_mode="Markdown")
+        text='\n'.join(content_lines[13:]), reply_markup=reply, parse_mode="HTML")
 # -------------------------------**  end block kafedra  **----------------------------
 
 
