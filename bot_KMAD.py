@@ -247,7 +247,8 @@ def istoria(update: Update, context: CallbackContext):
         query.message.reply_text(text= text_message, parse_mode="Markdown")
         link_photo = link + photos[i]
         print(link_photo)
-        query.message.reply_photo(link_photo)
+        x=query.message.reply_photo(link_photo)
+        print(x)
     query.message.reply_text(text=content_list[-1], reply_markup=reply, parse_mode="Markdown")
 
 def auditorii(update: Update, context: CallbackContext):
