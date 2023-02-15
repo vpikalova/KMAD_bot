@@ -403,7 +403,7 @@ def kilkistMists(update: Update, context: CallbackContext):
 
 def question(update, context):
     update.callback_query.message.reply_text('[Напишіть нашому представнику кафедри](https://t.me/kmad_khpi/) або приєднайтеся до [Інформаційної групи для абітурієнтів  кафедри](https://t.me/+mpwNrmMVtzMzZmNi), де зможете отримати відповіді на всі запитання, які вас цікавлять https://t.me/+mpwNrmMVtzMzZmNi',
-                                             parse_mode="Markdown", disable_web_page_preview=True)
+                                             parse_mode="Markdown", disable_web_page_preview=False)
 
 
 def error(update, context):
