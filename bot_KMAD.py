@@ -224,7 +224,23 @@ def istoria(update: Update, context: CallbackContext):
     content_lines = content.split('\n')
     photos = read_content(link +
                           contents['start']['next_menu']['kafedra']['next_menu']['istoria']['photo'][0])
-    photos = sorted(photos.split()[5:])
+    
+    photos = '''images/k_i_01.jpg
+    images/k_i_02.jpg
+    images/k_i_03.jpg
+    images/k_i_04.jpg
+    images/k_i_05.jpg
+    images/k_i_06.jpg
+    images/k_i_07.jpg
+    images/k_i_08.jpg
+    images/k_i_09.jpg
+    images/k_i_10.jpg
+    images/k_i_11.jpg
+    images/k_i_12.jpg
+    images/k_i_13.jpg
+    images/k_i_14.jpg
+    images/k_i_15.jpg'''
+    photos = photos.split()[5:]
     query = update.callback_query
     #query.answer()
     content_list = content.split('||')
