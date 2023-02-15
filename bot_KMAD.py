@@ -227,7 +227,7 @@ def istoria(update: Update, context: CallbackContext):
     photos = photos.split()
     query = update.callback_query
     #query.answer()
-    content_list = content.split('||')
+    content_list = content.split('||')[5:]
     reply = InlineKeyboardMarkup(keyboard_backto_kafedra)
     #step = (len(content_lines)-1) // len(photos)
     
