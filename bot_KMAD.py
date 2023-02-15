@@ -240,7 +240,7 @@ def istoria(update: Update, context: CallbackContext):
     images/k_i_13.jpg
     images/k_i_14.jpg
     images/k_i_15.jpg'''
-    photos = photos.split()[5:]
+    photos = sorted(photos.split()[5:])
     query = update.callback_query
     #query.answer()
     content_list = content.split('||')
