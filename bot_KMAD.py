@@ -241,7 +241,7 @@ def istoria(update: Update, context: CallbackContext):
     content_list = content.split('||')
     reply = InlineKeyboardMarkup(keyboard_backto_kafedra)
     #step = (len(content_lines)-1) // len(photos)
-    
+    query.message.reply_photo('https://vpikalova.github.io/KMAD_bot/data/images/k_i_01.jpg')
     for i in range(len(photos)):
         text_message = content_list[i]
         query.message.reply_text(text= text_message, parse_mode="Markdown")
