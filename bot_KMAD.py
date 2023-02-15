@@ -288,7 +288,7 @@ def proektnnavch(update: Update, context: CallbackContext):
 
     reply = InlineKeyboardMarkup(keyboard_backto_mozhlyvosti)
     query.message.reply_text(
-        text=content, reply_markup=reply, parse_mode="Markdown")
+        text=content, reply_markup=reply, parse_mode="HTML")
 
 
 def dualosvita(update: Update, context: CallbackContext):
@@ -300,7 +300,7 @@ def dualosvita(update: Update, context: CallbackContext):
 
     reply = InlineKeyboardMarkup(keyboard_backto_mozhlyvosti)
     query.message.reply_text(
-        text=content, reply_markup=reply, parse_mode="Markdown")
+        text=content, reply_markup=reply, parse_mode="HTML")
 
 
 def pratsevlashuv(update: Update, context: CallbackContext):
@@ -313,7 +313,7 @@ def pratsevlashuv(update: Update, context: CallbackContext):
     query = update.callback_query
     query.answer()
     reply = InlineKeyboardMarkup(keyboard_backto_mozhlyvosti)
-    query.message.reply_text(text=content, parse_mode="Markdown")
+    query.message.reply_text(text=content, parse_mode="HTML")
     query.message.reply_photo(link + photos[0],reply_markup=reply)
 
 
@@ -326,7 +326,7 @@ def praktika(update: Update, context: CallbackContext):
 
     reply = InlineKeyboardMarkup(keyboard_backto_mozhlyvosti)
     query.message.reply_text(
-        text=content, reply_markup=reply, parse_mode="Markdown")
+        text=content, reply_markup=reply, parse_mode="HTML")
 
 # -------------------------------**   end block mozhlyvosti  **----------------------------
 
